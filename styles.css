@@ -82,7 +82,20 @@ body {
 }
 
 #header-contact-btn {
+  display: none;
   padding: 0 0.5rem;
+}
+
+#nav-dropdown-btn {
+  background: none;
+  border: none;
+  color: var(--color-deep-blush);
+}
+
+#nav-dropdown-btn svg {
+  aspect-ratio: 1;
+  display: block;
+  width: 3rem;
 }
 
 .header-nav {
@@ -119,6 +132,14 @@ body {
 @media only screen and (min-width: 768px) {
   .header-logo {
     width: 120px;
+  }
+
+  #header-contact-btn {
+    display: flex !important;
+  }
+
+  #nav-dropdown-btn {
+    display: none;
   }
 
   .header-nav {

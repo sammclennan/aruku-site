@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+:root {
+  --color-ecstasy: #fb8214;
+  --color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.btn {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.btn-contact {
+  background-color: var(--color-ecstasy);
+}
+
+.header-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.header-top div {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.header-logo {
+  width: 100px;
+}
+
+.header-btn {
+  align-items: center;
+  border-radius: 0.5rem;
+  color: var(--color-white);
+  display: flex;
+  font-weight: bold;
+  gap: 0.25rem;
+  height: 2.5rem;
+  overflow: hidden;
+}
+
+.header-btn svg {
+  aspect-ratio: 1;
+  color: var(--color-white) !important;
+  width: 1.5rem;
+}
+
+.header-btn img {
+  height: 100%;
+  width: auto;
+}
+
+#header-phone-banner {
+  overflow: visible;
+}
+
+#header-phone-banner img {
+  height: 75%;
+}
+
+#header-contact-btn {
+  padding: 0 0.5rem;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .header-logo {
+    width: 120px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .header-logo {
+    width: 150px;
+  }
+}

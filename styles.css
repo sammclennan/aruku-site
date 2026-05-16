@@ -8,6 +8,8 @@
   --color-gallery: #eeeeee;
   --color-mine-shaft: #333333;
   --color-white: #ffffff;
+
+  --nav-dropdown-transition-time: 0.333s
 }
 
 * {
@@ -32,6 +34,13 @@ body {
 
 .btn-contact {
   background-color: var(--color-ecstasy);
+}
+
+.header {
+  background-color: var(--color-white);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .header-top {
@@ -100,8 +109,23 @@ body {
 
 .header-nav {
   background-color: var(--color-cherub);
+  -webkit-clip-path: inset(0 0 100% 0);
+          clip-path: inset(0 0 100% 0);
   color: var(--color-cosmic);
   font-size: 1.125rem;
+  position: absolute;
+  -webkit-transition: -webkit-clip-path var(--nav-dropdown-transition-time);
+  transition: -webkit-clip-path var(--nav-dropdown-transition-time);
+  -o-transition: clip-path var(--nav-dropdown-transition-time);
+  transition: clip-path var(--nav-dropdown-transition-time);
+  transition: clip-path var(--nav-dropdown-transition-time),
+    -webkit-clip-path var(--nav-dropdown-transition-time);
+  width: 100%;
+}
+
+.header-nav.show {
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
 }
 
 .header-nav ul {
@@ -144,10 +168,13 @@ body {
 
   .header-nav {
     background-color: transparent;
+    -webkit-clip-path: unset;
+            clip-path: unset;
     color: var(--color-mine-shaft);
     font-size: 0.75rem;
     margin-bottom: 0.25rem;
     padding: 0 1rem;
+    position: unset;
   }
 
   .header-nav ul {
@@ -177,4 +204,10 @@ body {
   .header-nav {
     font-size: inherit;
   }
+}
+
+.hero-img {
+  height: 600px;
+  object-fit: cover;
+  width: 100%;
 }

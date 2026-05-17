@@ -5,6 +5,7 @@
   --color-cosmic: #713748;
   --color-deep-blush: #e77193;
   --color-ecstasy: #fb8214;
+  --color-foam: #d4effb;
   --color-gallery: #eeeeee;
   --color-mine-shaft: #333333;
   --color-white: #ffffff;
@@ -206,8 +207,16 @@ body {
   }
 }
 
+.hero-section {
+  background-color: var(--color-foam);
+}
+
 .hero-img {
-  height: 600px;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
+
+/* @media only screen and (min-width: 768px) {
+  .hero-img {
+  }
+} */

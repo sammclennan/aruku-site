@@ -42,6 +42,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 999;
 }
 
 .header-top {
@@ -209,6 +210,7 @@ body {
 
 .hero-section {
   background-color: var(--color-foam);
+  position: relative;
 }
 
 .hero-img {
@@ -216,7 +218,28 @@ body {
   width: 100%;
 }
 
-/* @media only screen and (min-width: 768px) {
-  .hero-img {
+#hero-logo-floating {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+#hero-logo-floating img {
+  animation: floating infinite 2s ease-in-out;
+  display: block;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10%); }
+  100% { transform: translateY(0); }
+}
+
+@media only screen and (min-width: 768px) {
+  #hero-logo-floating {
+    left: unset;
+    transform: unset;
+    width: 30%;
   }
-} */
+}

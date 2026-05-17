@@ -8,6 +8,7 @@
   --color-foam: #d4effb;
   --color-gallery: #eeeeee;
   --color-mine-shaft: #333333;
+  --color-tory-blue: #144892;
   --color-white: #ffffff;
 
   --nav-dropdown-transition-time: 0.333s
@@ -27,6 +28,15 @@ body {
   font-weight: normal;
 }
 
+img {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .btn {
   cursor: pointer;
   display: block;
@@ -35,6 +45,10 @@ body {
 
 .btn-contact {
   background-color: var(--color-ecstasy);
+}
+
+.theme-color-text {
+  color: var(--color-deep-blush);
 }
 
 .header {
@@ -142,13 +156,11 @@ body {
 }
 
 .header-nav a {
-  color: inherit;
   display: block;
   font-size: inherit;
   font-weight: 600;
   padding: 1rem 0;
   text-align: center;
-  text-decoration: none;
 }
 
 .header-nav li:hover {
@@ -234,6 +246,29 @@ body {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10%); }
   100% { transform: translateY(0); }
+}
+
+.notifications {
+  background-color: var(--color-white);
+  padding: 1rem;
+}
+
+.notifications ul {
+  color: var(--color-tory-blue);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.125em;
+  font-weight: 700;
+  gap: 0.5rem;
+  list-style-position: inside;
+}
+
+.notifications li::marker {
+  color: var(--color-deep-blush);
+}
+
+.notifications li:hover {
+  color: var(--color-deep-blush);
 }
 
 @media only screen and (min-width: 768px) {

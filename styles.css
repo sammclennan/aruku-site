@@ -12,7 +12,8 @@
   --color-tory-blue: #144892;
   --color-white: #ffffff;
 
-  --nav-dropdown-transition-time: 0.333s
+  --nav-dropdown-transition-time: 0.333s;
+  --section-y-padding: 2rem;
 }
 
 * {
@@ -30,7 +31,7 @@ body {
 }
 
 section {
-  padding: 2.5rem 0;
+  padding: var(--section-y-padding) 0;
 }
 
 img {
@@ -67,6 +68,7 @@ a {
 .section-heading {
   font-size: 2.5rem;
   font-weight: 800;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -316,10 +318,8 @@ a {
   width: 90%;
 }
 
-.intro-content > div {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.intro-content p {
+  margin: 1rem 0;
 }
 
 .intro-content img {
@@ -340,4 +340,55 @@ a {
 
 .checklist-section {
   background-color: var(--color-carousel-pink);
+  position: relative;
+  padding-bottom: 0;
+}
+
+.checklist-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist-content ul {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: max-content;
+}
+
+.checklist-content li {
+  align-items: center;
+  border-bottom: 2px dashed var(--color-mine-shaft);
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.checklist-content li::before {
+  aspect-ratio: 1;
+  content: url(assets/images/icons/checkbox-icon.svg);
+  display: inline-block;
+  width: 1.5rem;
+}
+
+.checklist-content > img {
+  bottom: 0;
+  margin: 1rem auto auto;
+  width: 180px;
+}
+
+@media only screen and (min-width: 768px) {
+  .checklist-section {
+    padding-bottom: var(--section-y-padding);
+  }
+
+  .checklist-content {
+    flex-direction: row;
+  }
+
+  .checklist-content > img {
+    margin: auto;
+    transform: translateY(var(--section-y-padding));
+    width: 200px;
+  }
 }

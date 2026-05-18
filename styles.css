@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
 :root {
+  --color-cadillac: #ad556e;
   --color-carousel-pink: #fae3e9;
   --color-cherub: #fae0e7;
   --color-cosmic: #713748;
@@ -13,7 +14,8 @@
   --color-white: #ffffff;
 
   --nav-dropdown-transition-time: 0.333s;
-  --section-y-padding: 2rem;
+  --pill-radius: 999px;
+  --section-y-padding: 3rem;
 }
 
 * {
@@ -31,11 +33,18 @@ body {
 }
 
 section {
-  padding: var(--section-y-padding) 0;
+  padding: var(--section-y-padding) 5vw; /* TODO */
 }
 
 img {
   display: block;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  font-size: inherit;
+  text-decoration: none;
 }
 
 a {
@@ -49,12 +58,6 @@ a {
 
 .semibold {
   font-weight: 600;
-}
-
-.btn {
-  cursor: pointer;
-  display: block;
-  text-decoration: none;
 }
 
 .btn-contact {
@@ -241,6 +244,7 @@ a {
 
 .hero-section {
   background-color: var(--color-foam);
+  padding: 0;
   position: relative;
 }
 
@@ -252,6 +256,7 @@ a {
 #hero-logo-floating {
   position: absolute;
   left: 50%;
+  top: 5%;
   transform: translateX(-50%);
   width: 80%;
 }
@@ -299,7 +304,7 @@ a {
   }
 }
 
-.intro-section {
+section.intro {
   background-image: url(assets/images/sky-background.jpg);
   background-position: center;
   background-size: cover;
@@ -315,7 +320,6 @@ a {
   margin: auto;
   padding: 2rem;
   text-align: center;
-  width: 90%;
 }
 
 .intro-content p {
@@ -338,7 +342,7 @@ a {
   }
 }
 
-.checklist-section {
+section.checklist {
   background-color: var(--color-carousel-pink);
   position: relative;
   padding-bottom: 0;
@@ -378,7 +382,7 @@ a {
 }
 
 @media only screen and (min-width: 768px) {
-  .checklist-section {
+  section.checklist {
     padding-bottom: var(--section-y-padding);
   }
 
@@ -390,5 +394,128 @@ a {
     margin: auto;
     transform: translateY(var(--section-y-padding));
     width: 200px;
+  }
+}
+
+section.service-features {
+  background-color: var(--color-deep-blush);
+}
+
+section.service-features .section-heading {
+  color: var(--color-white);
+}
+
+.service-features-content {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: auto;
+}
+
+.service-feature-card {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0 var(--color-cadillac);
+  color: var(--color-cadillac);
+  display: block;
+  padding: 1.5rem;
+  transition: 0.1s ease-in-out;
+  width: 100%;
+}
+
+.service-feature-card:hover {
+  box-shadow: none;
+  transform: translateY(0.5rem);
+}
+
+.service-feature-card h3 {
+  border-bottom: 1px solid color-mix(
+    in srgb,
+    var(--color-deep-blush) 50%,
+    transparent
+  );
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.service-feature-card-content {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.service-feature-card-content > img {
+  aspect-ratio: 1;
+  width: 3.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .service-feature-card {
+    width: 48%;
+  }
+}
+
+section.service-introduction {
+  background: url(assets/images/pink-textured-background.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+section.service-introduction .section-content {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+section.service-introduction .content-card {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+section.service-introduction .content-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+section.service-introduction .content-card h3 {
+  border-bottom: 3px solid var(--color-deep-blush);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+section.service-introduction .content-card button {
+  align-items: center;
+  background-color: var(--color-deep-blush);
+  border: none;
+  border-radius: var(--pill-radius);
+  color: white;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+}
+
+section.service-introduction .content-card button::after {
+  content: url(assets/images/icons/right-arrow-icon.svg);
+  line-height: 0;
+}
+
+section.service-introduction .content-card img {
+  border-radius: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  section.service-introduction .content-card {
+    flex-direction: row;
   }
 }
